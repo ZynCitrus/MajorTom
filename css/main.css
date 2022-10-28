@@ -1,0 +1,289 @@
+body {
+    font-family: sans-serif;
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+}
+/*Länkar*/
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/*Grunder för sektionerna*/
+
+.sectionOne, .sectionTwo {
+  height: auto;
+  position: relative;
+}
+
+.heroOne {
+  background-image: url("/photos/adam-miller-dBaz0xhCkPY-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  min-height: 100vh;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+}
+
+.sectionTwo{
+  background-color: black;
+  color: white;
+  background-image: url("/photos/raphael-nogueira-svbDI1Pq30s-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  padding: 50px 30px;
+}
+
+.sectionTwo div{
+  padding: 16px;
+}
+.sectionTwo a{
+  color: rgb(110, 23, 84);
+  font-weight: bolder;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+/*SpaceVentures-texten*/
+
+.spaceVentures { 
+  position: relative;
+  padding: 24px;
+  font-weight: lighter;
+}
+
+.spaceVentures h1:first-child{
+  font-size: 10vw;
+}
+
+.spaceVentures h1:last-child{
+  font-size: 15vw;
+  margin: 0px;
+  margin-top: calc(-1.25vw * 10);
+  margin-left: 83px;
+  opacity: 0.8;
+}
+
+/*citaten*/
+
+.bigQuote{
+  display: none;
+  font-style: italic;
+}
+
+.bigQuote p{
+  font-size: 2vw;
+  padding-top: 10px;
+  background: -webkit-linear-gradient(-45deg, rgba(210,0,144,1) 0%, rgb(255, 255, 255) 50%, rgba(210,0,157,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.smallQuote{
+  display: flex;
+  align-items:flex-end;
+  font-style: italic;
+}
+
+.smallQuote p {
+  padding-left: 5vw;
+  font-size: 30px;
+}
+
+  
+/*Moonbox*/
+  .moonBox {
+    border: 5px solid black;
+    top: 40px;
+    left: 40px;
+    padding: 40px;
+    position: absolute;
+    opacity: 0.7;
+    background-color:rgba(255, 255, 255, 0.5)
+  }
+
+  .moonBox h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    justify-content: flex-end;
+  }
+
+  .moonBox story {
+    font-size: 10px;
+    /*justify-content: flex-end;*/
+    text-align: right;
+  }
+
+  .moonBox a:hover{
+    font-size: 20px;
+  }
+
+  /*Hero två, spalter*/
+
+  .left{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left h2 {
+    font-size: 50px;
+  }
+
+  .right{
+    grid-area: g;
+  }
+
+  p {
+    font-size: 18px;
+    padding: 5px 0px;
+    margin: 0px;
+  }
+
+
+  /*Meny*/
+input{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  width: 35px;
+  height: 35px;
+  opacity: 0;
+}
+
+menu {
+  z-index: 1;
+}
+
+  button {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border: 0;
+    z-index: 1;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+input:checked + .menu button span{
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+}
+
+input:checked + .menu button span:nth-child(2){
+    opacity: 0;
+}
+
+input:checked + .menu button span:nth-child(1){
+    transform: rotate(-45deg);
+}
+
+input:checked + .menu button span:nth-child(3){
+    transform: rotate(45deg);
+}
+
+/*Navigation*/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    z-index: 1;
+}
+
+input:checked + .menu nav{
+    visibility: visible;
+    opacity: 1;
+    transition: 1s;
+}
+
+ul{
+    padding: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    height: 100%;
+    justify-content: space-evenly;
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+
+/*Desktop*/
+
+  @media screen and (min-width: 900px) {
+    .sectionTwo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 50% 50%;
+      grid-template-areas: "a . c" "e . g";
+      grid-auto-flow: column;
+    }
+    .bigQuote{
+      grid-area: c;
+      display: flex;
+      align-items: center;
+    }
+    .bigQuote p{
+      font-size: 3vw;
+    }
+
+    .spaceVentures{
+      grid-area: a;
+    }
+    
+    .left{
+      grid-area: e;
+    }
+  
+    .right{
+      grid-area: g;
+    }
+
+    .spaceVentures h1:first-child{
+      margin: 10px;
+    }
+    
+    .spaceVentures h1:last-child{
+      margin: 0px;
+      margin-top: calc(-0.75vw * 10);
+      margin-left: 68px;
+    }
+    .smallQuote{
+      display: flex;
+      align-items:flex-end;
+    }
+  }
