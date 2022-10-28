@@ -28,7 +28,7 @@ a:hover {
 }
 
 .heroOne {
-  background-image: url("/photos/adam-miller-dBaz0xhCkPY-unsplash.jpg");
+  background-image: url("photos/adam-miller-dBaz0xhCkPY-unsplash.jpg");
   background-position: center;
   background-size: cover;
   display: grid;
@@ -41,7 +41,7 @@ a:hover {
 .sectionTwo{
   background-color: black;
   color: white;
-  background-image: url("/photos/raphael-nogueira-svbDI1Pq30s-unsplash.jpg");
+  background-image: url("photos/raphael-nogueira-svbDI1Pq30s-unsplash.jpg");
   background-position: center;
   background-size: cover;
   display: grid;
